@@ -1,19 +1,15 @@
 import MainScreen from "@/src/screens/MainScreen";
-import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function Index() {
-  let screen = <MainScreen />;
+  let screen: React.JSX.Element = <MainScreen />;
 
   return (
-    <LinearGradient
-      colors={["#1C1C1E", "#2C3E50"]}
-      style={styles.rootContainer}
-    >
+    <>
       <StatusBar style="light" />
-      <SafeAreaView>{screen}</SafeAreaView>;
-    </LinearGradient>
+      <View style={styles.rootContainer}>{screen}</View>
+    </>
   );
 }
 

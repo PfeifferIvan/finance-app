@@ -40,7 +40,7 @@ const Colors = {
   success: "#1ABC9C",
   shadow: "rgba(0,0,0,0.3)",
   gradients: {
-    background: ["#1C1C1E", "#2C3E50"],
+    background: ["#1C1C1E", "#2C3E50"] as [string, string],
     header: ["#27AE60", "#145A32"],
     income: ["#196F3D", "#27AE60"],
     expense: ["#943126", "#E74C3C"],
