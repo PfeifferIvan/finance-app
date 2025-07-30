@@ -1,20 +1,22 @@
 import Colors from "@/constants/Colors";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleProp, StyleSheet, Text, TextStyle, View } from "react-native";
 
 type Props = {
   title: string;
   amount: number;
+  textStyle?: StyleProp<TextStyle>;
+  amountStyle?: StyleProp<TextStyle>;
 };
 
-function Card({ title, amount }: Props) {
+function Card({ title, amount, textStyle, amountStyle }: Props) {
   const formated = new Intl.NumberFormat("en-US").format(amount);
   return (
-    <View style={styles.card}>
+    <View style={[styles.card]}>
       <View style={styles.titleContainer}>
-        <Text style={styles.categoryTitle}>{title}</Text>
+        <Text style={[styles.categoryTitle, textStyle]}>{title}</Text>
       </View>
       <View style={styles.amountContainer}>
-        <Text style={styles.amountText}>$ {formated} mxn</Text>
+        <Text style={[styles.amountText, amountStyle]}>$ {formated}</Text>
       </View>
     </View>
   );

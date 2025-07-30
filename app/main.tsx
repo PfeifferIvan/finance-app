@@ -2,15 +2,39 @@ import Card from "@/components/ui/Card";
 import MainHeader from "@/components/ui/MainHeader";
 import Colors from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
+import { useState } from "react";
 
 import { StyleSheet, View } from "react-native";
 
 function MainScreen() {
+  const [income, setIncome] = useState(44000);
+  const [expense, setExpense] = useState(10000);
+
+  const currentBalance = income - expense;
+
   return (
     <LinearGradient colors={Colors.gradients.background} style={styles.screen}>
       <View>
         <MainHeader userName={"Ivan"} />
-        <Card title="Current Balance" amount={40000} />
+        <Card title="Current Balance" amount={currentBalance} />
+      </View>
+      <View style={styles.inexContainer}>
+        <View style={styles.incomeContainer}>
+          <Card
+            title="Income"
+            amount={income}
+            textStyle={{ color: Colors.income }}
+            amountStyle={{ fontSize: 20 }}
+          />
+        </View>
+        <View style={styles.expenseContainer}>
+          <Card
+            title="Expenses"
+            amount={expense}
+            textStyle={{ color: Colors.expense }}
+            amountStyle={{ fontSize: 20 }}
+          />
+        </View>
       </View>
     </LinearGradient>
   );
@@ -21,7 +45,17 @@ export default MainScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 40,
+    padding: 30,
     backgroundColor: Colors.background,
+  },
+  inexContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  incomeContainer: {
+    width: "50%",
+  },
+  expenseContainer: {
+    width: "50%",
   },
 });
