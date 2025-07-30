@@ -24,7 +24,7 @@ function MainScreen() {
             title="Income"
             amount={income}
             textStyle={{ color: Colors.income }}
-            amountStyle={{ fontSize: 20 }}
+            amountStyle={{ fontSize: 18 }}
           />
         </View>
         <View style={styles.expenseContainer}>
@@ -32,7 +32,7 @@ function MainScreen() {
             title="Expenses"
             amount={expense}
             textStyle={{ color: Colors.expense }}
-            amountStyle={{ fontSize: 20 }}
+            amountStyle={{ fontSize: 18 }}
           />
         </View>
       </View>
