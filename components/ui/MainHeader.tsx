@@ -17,7 +17,7 @@ function MainHeader({ userName }: Props) {
           color={Colors.text}
         />
         <Text
-          style={{ color: Colors.text, marginHorizontal: 12, fontSize: 18 }}
+          style={{ color: Colors.text, marginHorizontal: 12, fontSize: 15 }}
         >
           24°C
         </Text>
