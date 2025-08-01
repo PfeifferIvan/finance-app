@@ -4,7 +4,7 @@ import Colors from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 function MainScreen() {
   const [income, setIncome] = useState(44000);
@@ -36,6 +36,7 @@ function MainScreen() {
           />
         </View>
       </View>
+      <Text style={styles.subtitle}>Recent Transactions</Text>
     </LinearGradient>
   );
 }
@@ -57,5 +58,11 @@ const styles = StyleSheet.create({
   },
   expenseContainer: {
     width: "50%",
+  },
+  subtitle: {
+    marginHorizontal: 30,
+    paddingTop: 20,
+    fontSize: 18,
+    color: Colors.textSecondary,
   },
 });
