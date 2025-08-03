@@ -6,6 +6,7 @@ export enum Category {
   Personal = "Personal",
   Savings = "Savings",
   Other = "Other",
+  Payroll = "Payroll",
 }
 
 export interface Transaction {
