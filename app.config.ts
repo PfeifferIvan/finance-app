@@ -7,6 +7,7 @@ export default {
     version: "1.0.0",
     extra: {
       WEATHER_KEY: process.env.WEATHER_KEY,
+      WEATHER_BASE_URL: process.env.WEATHER_BASE_URL,
     },
     orientation: "portrait",
     icon: "./assets/images/icon.png",

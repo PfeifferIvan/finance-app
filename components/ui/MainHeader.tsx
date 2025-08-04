@@ -1,6 +1,6 @@
 import Colors from "@/constants/Colors";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StyleSheet, Text, View } from "react-native";
+import Weather from "../Weather";
 
 type Props = {
   userName: string;
@@ -10,18 +10,7 @@ function MainHeader({ userName }: Props) {
   return (
     <View style={styles.headerContainer}>
       <Text style={styles.greeting}>Hello, {userName}</Text>
-      <View style={styles.weatherContainer}>
-        <MaterialCommunityIcons
-          name="weather-cloudy"
-          size={22}
-          color={Colors.text}
-        />
-        <Text
-          style={{ color: Colors.text, marginHorizontal: 12, fontSize: 15 }}
-        >
-          24°C
-        </Text>
-      </View>
+      <Weather />
     </View>
   );
 }
@@ -40,9 +29,5 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: "bold",
     flex: 3,
-  },
-  weatherContainer: {
-    flex: 1,
-    flexDirection: "row",
   },
 });
