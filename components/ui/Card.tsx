@@ -1,4 +1,5 @@
 import Colors from "@/constants/Colors";
+import { amountFormater } from "@/utils/utils";
 import { StyleProp, StyleSheet, Text, TextStyle, View } from "react-native";
 
 type Props = {
@@ -9,7 +10,7 @@ type Props = {
 };
 
 function Card({ title, amount, textStyle, amountStyle }: Props) {
-  const formated = new Intl.NumberFormat("en-US").format(amount);
+  const formated = amountFormater(amount);
   return (
     <View style={[styles.card]}>
       <View style={styles.titleContainer}>

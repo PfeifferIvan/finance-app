@@ -1,5 +1,7 @@
+import TransactionButton from "@/components/TransactionButton";
 import Card from "@/components/ui/Card";
 import MainHeader from "@/components/ui/MainHeader";
+import TransactionsList from "@/components/ui/TransactionsList";
 import Colors from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
@@ -37,6 +39,8 @@ function MainScreen() {
         </View>
       </View>
       <Text style={styles.subtitle}>Recent Transactions</Text>
+      <TransactionsList />
+      <TransactionButton />
     </LinearGradient>
   );
 }
