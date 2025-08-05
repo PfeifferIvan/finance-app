@@ -47,6 +47,19 @@ const Colors = {
     buttonPrimary: ["#145A32", "#28B463"],
     buttonSecondary: ["#1B4F72", "#3498DB"],
   },
+  drawer: {
+    background: "#1C1C1E", // Drawer background
+    activeBackground: "#555ad4ff", // Background for active item
+    activeText: "#ECF0F1", // Text color for active item
+    inactiveText: "#95A5A6", // Text color for inactive items
+    border: "#2F3640", // Border or divider color
+    hover: "#2C3E50", // On press or hover (ripple) background
+    disabledText: "#7F8C8D", // Disabled item text
+    shadow: "rgba(0,0,0,0.3)", // Shadow under drawer or items
+    gradients: {
+      header: ["#27AE60", "#145A32"], // Optional header gradient
+    },
+  },
 };
 
 export default Colors;

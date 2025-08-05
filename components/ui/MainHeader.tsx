@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "row",
     justifyContent: "center",
-    marginTop: 40,
+    marginTop: 20,
     marginHorizontal: 40,
   },
   greeting: {

@@ -6,6 +6,7 @@ import Colors from "@/constants/Colors";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 
+import DrawerButton from "@/components/ui/DrawerButton";
 import { StyleSheet, Text, View } from "react-native";
 
 function MainScreen() {
@@ -16,6 +17,9 @@ function MainScreen() {
 
   return (
     <LinearGradient colors={Colors.gradients.background} style={styles.screen}>
+      <View style={styles.drawerButton}>
+        <DrawerButton />
+      </View>
       <View>
         <MainHeader userName={"Ivan"} />
         <Card title="Current Balance" amount={currentBalance} />
@@ -68,5 +72,10 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     fontSize: 18,
     color: Colors.textSecondary,
+  },
+  drawerButton: {
+    justifyContent: "center",
+    paddingTop: 40,
+    marginHorizontal: 25,
   },
 });
