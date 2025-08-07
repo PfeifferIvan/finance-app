@@ -1,22 +1,23 @@
-import TransactionButton from "@/components/TransactionButton";
 import Card from "@/components/ui/Card";
 import MainHeader from "@/components/ui/MainHeader";
 import TransactionsList from "@/components/ui/TransactionsList";
 import Colors from "@/constants/Colors";
-import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 
+import TransactionButton from "@/components/TransactionButton";
 import DrawerButton from "@/components/ui/DrawerButton";
+import { useRouter } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 
 function MainScreen() {
+  const router = useRouter();
   const [income, setIncome] = useState(44000);
   const [expense, setExpense] = useState(10000);
 
   const currentBalance = income - expense;
 
   return (
-    <LinearGradient colors={Colors.gradients.background} style={styles.screen}>
+    <View style={styles.screen}>
       <View style={styles.drawerButton}>
         <DrawerButton />
       </View>
@@ -44,8 +45,10 @@ function MainScreen() {
       </View>
       <Text style={styles.subtitle}>Recent Transactions</Text>
       <TransactionsList />
-      <TransactionButton />
-    </LinearGradient>
+      <TransactionButton
+        onPress={() => router.push("/TransactionFormScreen")}
+      />
+    </View>
   );
 }
 
@@ -54,8 +57,8 @@ export default MainScreen;
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
+    backgroundColor: "transparent",
     padding: 30,
-    backgroundColor: Colors.background,
   },
   inexContainer: {
     flexDirection: "row",

@@ -1,12 +1,20 @@
 import Colors from "@/constants/Colors";
+import { useRouter } from "expo-router";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function TransactionButton() {
+type Props = {
+  onPress: () => void;
+};
+
+export default function TransactionButton({ onPress }: Props) {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Pressable
         android_ripple={{ color: "#ccc" }}
         style={({ pressed }) => (pressed ? styles.pressed : "")}
+        onPress={onPress}
       >
         <Text style={styles.textStyle}>Add Transaction</Text>
       </Pressable>
