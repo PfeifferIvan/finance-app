@@ -11,7 +11,10 @@ function HomeLayout() {
       <Stack.Screen name="index" />
       <Stack.Screen
         name="TransactionFormScreen"
-        options={{ presentation: "modal", headerShown: true }}
+        options={{
+          presentation: "modal",
+          headerShown: false,
+        }}
       />
     </Stack>
   );

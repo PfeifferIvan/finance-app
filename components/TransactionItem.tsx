@@ -1,6 +1,6 @@
 import Colors from "@/constants/Colors";
 import { Transaction } from "@/model/Transaction";
-import { amountFormater } from "@/utils/utils";
+import { amountFormater, formatDate } from "@/utils/utils";
 import { StyleSheet, Text, View } from "react-native";
 
 export default function TransactionItem({
@@ -21,7 +21,7 @@ export default function TransactionItem({
         </Text>
       </View>
       <View style={styles.dateContainer}>
-        <Text style={styles.dateText}>{date}</Text>
+        <Text style={styles.dateText}>{formatDate(date)}</Text>
         <Text style={[{ color: "white" }]}>{oneWordDescription}</Text>
       </View>
     </View>

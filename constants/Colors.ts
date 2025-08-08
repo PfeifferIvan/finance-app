@@ -39,6 +39,7 @@ const Colors = {
   disabled: "#7F8C8D",
   success: "#1ABC9C",
   shadow: "rgba(0,0,0,0.3)",
+  input: "rgba(255, 255, 255, 0.05)",
   gradients: {
     background: ["#1C1C1E", "#2C3E50"] as [string, string],
     header: ["#27AE60", "#145A32"],
@@ -59,6 +60,9 @@ const Colors = {
     gradients: {
       header: ["#27AE60", "#145A32"], // Optional header gradient
     },
+  },
+  modals: {
+    background: "rgba(44, 62, 80, 1)",
   },
 };
 
