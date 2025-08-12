@@ -14,6 +14,7 @@ type Props = {
   data: string[];
   selectedValue: string;
   onSelect: (value: string) => void;
+  style: any;
 };
 
 export default function CustomPickerModal({
