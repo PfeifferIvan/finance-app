@@ -6,15 +6,31 @@ import ActionButton from "../../components/ui/ActionButton";
 import Input from "../../components/ui/Input";
 import Colors from "../../constants/Colors";
 import { EXPENSE_TYPES, INCOME_TYPES } from "../../constants/Expense_types";
+import validateTransaction from "../../utils/utils";
 
 export default function TransactionFormScreen() {
   const [transactionType, setTransactionType] = useState("Expense");
   const [transactionCategory, setTransactionCategory] = useState("Other");
+
   const pickerData =
     transactionType === "Expense" ? EXPENSE_TYPES : INCOME_TYPES;
 
   function cancelHandler() {
     router.back();
+  }
+
+  function submitHandler() {
+    //TODO: continue working on this function, create state for each field in the form and add api.
+    const expenseData = {
+      id: inputs.description?.value,
+      type: transactionType,
+      category: transactionCategory,
+      amount: Number(inputs.amount.value),
+      description: inputs.description?.value || "",
+      date: new Date(inputs.date?.value) || "",
+    };
+
+    const isValid = validateTransaction(expenseData);
   }
 
   return (
@@ -50,7 +66,7 @@ export default function TransactionFormScreen() {
             placeholderTextColor: Colors.textSecondary,
           }}
         />
-        <Input label="Date" textInputConfig={{ placeholder: "DD/MM/YYYY" }} />
+        <Input label="Date" textInputConfig={{ placeholder: "YYYY-MM-DD" }} />
       </View>
       <View style={styles.rowInput}>
         <Text style={[styles.label, { marginHorizontal: 12 }]}>Category</Text>

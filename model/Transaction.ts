@@ -1,4 +1,4 @@
-type TransactionType = "income" | "expense";
+export type TransactionType = "income" | "expense";
 
 export enum Category {
   Credits = "Credits",
